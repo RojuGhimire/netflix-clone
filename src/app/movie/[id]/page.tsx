@@ -3,6 +3,7 @@ import Image from "next/image";
 
 export default async function MoviePage({ params }: { params: { id: string } }) {
   const movie = await fetchMovieDetails(params.id);
+   const movieId = params.id;
 
   return (
     <main className="p-6 text-white">
