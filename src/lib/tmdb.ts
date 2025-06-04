@@ -10,3 +10,10 @@ export async function fetchTrendingMovies() {
   }
   return res.json();
 }
+export async function fetchMovieDetails(id: string) {
+  const res = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`);
+  if (!res.ok) {
+    throw new Error('Failed to fetch movie details');
+  }
+  return res.json();
+}
