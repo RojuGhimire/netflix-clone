@@ -17,7 +17,7 @@ export async function fetchMovieDetails(id: string) {
   }
   return res.json();
 }
-export async function fetchSearchResults(query: string) {
+export async function fetchSearchResults(query: string,) {
   try {
     const res = await fetch(
       `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&api_key=${process.env.TMDB_API_KEY}`
