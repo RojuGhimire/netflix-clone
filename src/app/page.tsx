@@ -1,5 +1,6 @@
 // src/app/page.tsx
 import { fetchTrendingMovies } from "@/lib/tmdb";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
@@ -14,7 +15,7 @@ export default async function Home() {
         {movies.map((movie: any) => (
   <Link href={`/movie/${movie.id}`} key={movie.id}>
     <div className="bg-gray-800 text-white p-2 rounded hover:scale-105 transition">
-      <img
+      <Image
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
         className="w-full h-auto rounded"
