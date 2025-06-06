@@ -1,3 +1,4 @@
+"use client";
 import { SearchBar } from "@/components/Searchbar";
 import { fetchTrendingMovies } from "@/lib/tmdb";
 import Link from "next/link";
