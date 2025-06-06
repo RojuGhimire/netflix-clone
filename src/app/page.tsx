@@ -1,4 +1,5 @@
 "use client";
+import { AuthButton } from "@/components/AuthButton";
 import { SearchBar } from "@/components/Searchbar";
 import { fetchTrendingMovies } from "@/lib/tmdb";
 import Link from "next/link";
@@ -9,9 +10,11 @@ export default async function Home() {
 
   return (
     <main className="p-6">
-      <h1 className="text-3xl font-bold mb-6 text-white">Trending Movies</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold mb-6 text-white">Trending Movies</h1>
 
-      
+        <AuthButton />
+      </div>
       <SearchBar />
 
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
