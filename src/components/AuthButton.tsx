@@ -1,31 +1,16 @@
-// components/AuthButton.tsx
 'use client';
 
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signIn, signOut, useSession } from 'next-auth/react';
 
-export function AuthButton() {
+export default function AuthButtons() {
   const { data: session } = useSession();
 
-  if (session) {
-    return (
-      <div className="flex items-center gap-4">
-        <p className="text-white">Hi, {session.user?.name}</p>
-        <button
-          className="bg-red-600 px-4 py-2 rounded text-white"
-          onClick={() => signOut()}
-        >
-          Sign Out
-        </button>
-      </div>
-    );
-  }
-
-  return (
-    <button
-      className="bg-blue-600 px-4 py-2 rounded text-white"
-      onClick={() => signIn("google")}
-    >
-      Sign In with Google
-    </button>
+  return session ? (
+    <div className="text-white flex gap-4">
+      <p>Hello, {session.user?.name}</p>
+      <button onClick={() => signOut()} className="bg-red-600 px-4 py-2 rounded">Sign Out</button>
+    </div>
+  ) : (
+    <button onClick={() => signIn("google")} className="bg-blue-600 px-4 py-2 rounded">Sign In with Google</button>
   );
 }

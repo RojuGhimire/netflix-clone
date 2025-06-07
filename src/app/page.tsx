@@ -1,5 +1,5 @@
 "use client";
-import { AuthButton } from "@/components/AuthButton";
+import AuthButtons from "@/components/AuthButton";
 import { SearchBar } from "@/components/Searchbar";
 import { fetchTrendingMovies } from "@/lib/tmdb";
 import Link from "next/link";
@@ -13,7 +13,6 @@ export default async function Home() {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold mb-6 text-white">Trending Movies</h1>
 
-        <AuthButton />
       </div>
       <SearchBar />
 
